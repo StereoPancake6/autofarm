@@ -1,5 +1,7 @@
 --[[
-Fortniyr
+Da Hood auto rob script by Amnesia
+I know script became a bit monkey code but i am lazy to make it look better
+I didn't obfuscate it because why not
 ]]
 repeat
     wait()
@@ -72,17 +74,11 @@ while shared.MoneyFarm do
             end
         )
     until not Target or Target.Humanoid.Health < 0
-    for i, v in pairs(game:GetService("Workspace").Ignored.Drop:GetDescendants()) do
-        if v:IsA("ClickDetector") and v.Parent and v.Parent.Name:find("Money") then
-            local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
-            local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
-            if (v.Parent.Position - HumanoidRootPart.Position).magnitude <= 18 then
-                repeat
-                    wait()
-                    fireclickdetector(v)
-                until not v or not v.Parent.Parent
-            end
-        end
+    for i, money in ipairs(game.Workspace.Ignored.Drop:GetChildren()) do
+        if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 18 then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = money.CFrame
+            fireclickdetector(money.ClickDetector)
+            wait(0.6)
+        end  
     end
-    wait(1)
 end
