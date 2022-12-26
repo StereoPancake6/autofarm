@@ -1,8 +1,4 @@
---[[
-Da Hood auto rob script by Amnesia
-I know script became a bit monkey code but i am lazy to make it look better
-I didn't obfuscate it because why not
-]]
+
 repeat
     wait()
 until game:IsLoaded()
@@ -49,8 +45,6 @@ for i, v in pairs(workspace:GetDescendants()) do
         v:Destroy()
     end
 end
-
-print("Amnesia's Da Hood Farm")
 
 shared.MoneyFarm = true -- Just execute shared.MoneyFarm = false to stop farming
 
