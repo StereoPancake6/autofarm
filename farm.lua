@@ -23,7 +23,7 @@ gm.__namecall =
 
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
-function gettarget()
+function GetTarget()
     local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
     local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
     local maxdistance = math.huge
@@ -50,7 +50,7 @@ shared.MoneyFarm = true -- Just execute shared.MoneyFarm = false to stop farming
 
 while shared.MoneyFarm do
     wait()
-    local Target = gettarget()
+    local Target = GetTarget()
     repeat
         wait()
         pcall(
@@ -69,10 +69,12 @@ while shared.MoneyFarm do
         )
     until not Target or Target.Humanoid.Health < 0
     for i, money in ipairs(game.Workspace.Ignored.Drop:GetChildren()) do
-        if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 18 then
+        if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 19 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = money.CFrame
             fireclickdetector(money.ClickDetector)
-            wait(0.6)
+            wait(0.9)
         end  
     end
 end
+
+startGetTarget()
