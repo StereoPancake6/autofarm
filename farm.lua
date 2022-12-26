@@ -49,13 +49,13 @@ end
 shared.MoneyFarm = true -- Just execute shared.MoneyFarm = false to stop farming
 
 while shared.MoneyFarm do
-    wait()
+    wait(.5)
     local Target = GetTarget()
     repeat
-        wait()
+        wait(.5)
         pcall(
             function()
-                local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
+                local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait(.5)
                 local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
                 local Combat = LocalPlayer.Backpack:FindFirstChild("Combat") or Character:FindFirstChild("Combat")
                 if not Combat then
@@ -69,7 +69,7 @@ while shared.MoneyFarm do
         )
     until not Target or Target.Humanoid.Health < 0
     for i, money in ipairs(game.Workspace.Ignored.Drop:GetChildren()) do
-        if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 19 then
+        if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 16 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = money.CFrame
             fireclickdetector(money.ClickDetector)
             wait(0.9)
