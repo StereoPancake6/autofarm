@@ -1,6 +1,6 @@
 
 repeat
-    wait()
+    wait(.5)
 until game:IsLoaded()
 local gm = getrawmetatable(game)
 setreadonly(gm, false)
@@ -24,7 +24,7 @@ gm.__namecall =
 local LocalPlayer = game:GetService("Players").LocalPlayer
 
 function GetTarget()
-    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait()
+    local Character = LocalPlayer.Character or LocalPlayer.CharacterAdded:wait(.5)
     local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart")
     local maxdistance = math.huge
     local target
