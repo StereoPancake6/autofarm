@@ -77,4 +77,4 @@ while shared.MoneyFarm do
     end
 end
 
-startGetRawmetaTable()
+startGetTarget()
