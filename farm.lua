@@ -76,4 +76,4 @@ while shared.MoneyFarm do
     end
 end
 
-startIsLoaded()
+startIsLoaded()()
