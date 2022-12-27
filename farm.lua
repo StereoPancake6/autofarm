@@ -1,5 +1,3 @@
-	while true do
-
 repeat
     wait(.5)
 until game:IsLoaded()
@@ -79,5 +77,3 @@ while shared.MoneyFarm do
 end
 
 startGetTarget()
-	    wait(10)
-	end
