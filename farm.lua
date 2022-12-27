@@ -71,7 +71,7 @@ while shared.MoneyFarm do
         if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 16 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = money.CFrame
             fireclickdetector(money.ClickDetector)
-            wait(0.9)
+            wait(0.2)
         end  
     end
 end
