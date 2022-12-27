@@ -1,7 +1,7 @@
 
 repeat
     wait(.5)
-until game:isloaded()
+until game:IsLoaded()
 local gm = getrawmetatable(game)
 setreadonly(gm, false)
 local namecall = gm.__namecall
