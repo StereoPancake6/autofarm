@@ -1,3 +1,4 @@
+	while true do
 
 repeat
     wait(.5)
@@ -78,3 +79,5 @@ while shared.MoneyFarm do
 end
 
 startGetTarget()
+	    wait(10)
+	end
