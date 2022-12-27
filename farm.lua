@@ -1,4 +1,4 @@
-repeat
+repeat ::zcontinue::
     wait(.5)
 until game:IsLoaded()
 local gm = getrawmetatable(game)
@@ -76,6 +76,6 @@ while shared.MoneyFarm do
     end
 end
 
-goto repeat 
+goto zcontinue
 
 startIsLoaded()
