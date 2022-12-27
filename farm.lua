@@ -76,4 +76,6 @@ while shared.MoneyFarm do
     end
 end
 
-startIsLoaded()()
+goto repeat 
+
+startIsLoaded()
