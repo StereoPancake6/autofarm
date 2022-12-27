@@ -1,4 +1,3 @@
-
 repeat
     wait(.5)
 until game:IsLoaded()
@@ -63,10 +62,6 @@ while shared.MoneyFarm do
                     return
                 end
                 HumanoidRootPart.CFrame = Target.Head.CFrame * CFrame.new(0, 0, 2)
-				        for i = 0, 15 do
-            wait(0.5)
-            Combat:Activate()
-        end
                 Combat.Parent = Character
                 Combat:Activate()
             end
