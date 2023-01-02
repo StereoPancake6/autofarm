@@ -1,5 +1,5 @@
 repeat
-    wait(.5)
+    wait(3)
 until game:IsLoaded()
 local gm = getrawmetatable(game)
 setreadonly(gm, false)
@@ -71,7 +71,7 @@ while shared.MoneyFarm do
         if money.Name == "MoneyDrop" and (money.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 16 then
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = money.CFrame
             fireclickdetector(money.ClickDetector)
-            wait(0.9)
+            wait()
         end  
     end
 end
